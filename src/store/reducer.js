@@ -2,7 +2,6 @@ import { types } from "./constants";
 import data from "./data.json";
 
 export const reducer = (currentState, action) => {
-  console.log({ ...currentState }, "previous");
   switch (action.type) {
     case types.SUBMIT_ANSWER_AND_MOVE_TO_NEXT_QUESTION:
       const currentQuesIndex = currentState?.currentQuestionIndex ?? 0;
@@ -26,7 +25,6 @@ export const reducer = (currentState, action) => {
           currentState.currentQuestionIndex += 1;
         }
       }
-      console.log({ ...currentState }, "updated");
       return { ...currentState };
     case types.STORE_QUIZZES:
       return { ...action?.payload };
