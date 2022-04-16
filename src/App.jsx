@@ -17,6 +17,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/quizzes" element={<Quizzes />} />
+          <Route path="/quiz/:quizId" element={<Questions />} />
+          <Route path="/quiz/:quizId/result/" element={<Result />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/sign-up" element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </QuizContext.Provider>
