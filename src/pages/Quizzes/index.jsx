@@ -11,7 +11,7 @@ const Finsight = () => {
   useEffect(() => {
     axios({
       method: "GET",
-      url: "https://quiz-fake-db.aliarslanansari.repl.co/quizzes",
+      url: "https://quiz-prog-languages-fake-db.aliarslanansari.repl.co/quizzes",
     }).then((response) => {
       dispatch({
         type: types.STORE_QUIZZES,
