@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./styles.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './styles.css';
 
-const Rules = () => {
+function Rules() {
   return (
     <div className="rules-container">
       <h1 className="rule-heading">Rules for Quiz</h1>
@@ -26,6 +26,6 @@ const Rules = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Rules;

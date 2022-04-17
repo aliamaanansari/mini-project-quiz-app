@@ -1,16 +1,16 @@
-import React, { useContext, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { types } from "../../store/constants";
-import { QuizContext } from "../../store/context";
-import "./styles.css";
+import React, { useContext, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { types } from '../../store/constants';
+import { QuizContext } from '../../store/context';
+import './styles.css';
 
-const Questions = () => {
+function Questions() {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(QuizContext);
   const { quizId } = useParams();
   const quiz = state?.quizzes.find((item) => item?.uuid === quizId);
   const currentQuestion = quiz?.questions?.[state?.currentQuestionIndex];
-  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [selectedAnswer, setSelectedAnswer] = useState('');
 
   const submitAnswerAndMoveToNextQuestion = () => {
     const currentQuestionIndex = state?.currentQuestionIndex;
@@ -22,7 +22,7 @@ const Questions = () => {
           answer: selectedAnswer,
         },
       });
-      setSelectedAnswer("");
+      setSelectedAnswer('');
     }
     if (currentQuestionIndex >= quiz?.questions?.length - 1) {
       navigate(`/quiz/${quizId}/result/`);
@@ -37,11 +37,17 @@ const Questions = () => {
       <p className="title-text">{quiz?.title}</p>
       <div className="question-header">
         <p className="question1-point">
-          <span className="question-number">Question: </span>{" "}
-          {state?.currentQuestionIndex + 1} / {quiz?.questions?.length}
+          <span className="question-number">Question: </span>
+          {' '}
+          {state?.currentQuestionIndex + 1}
+          {' '}
+          /
+          {quiz?.questions?.length}
         </p>
         <p className="score">
-          <span className="question-score">Score: </span> 0
+          <span className="question-score">Score: </span>
+          {' '}
+          0
         </p>
       </div>
       <p className="question">{currentQuestion?.question}</p>
@@ -50,7 +56,7 @@ const Questions = () => {
           <button
             key={index}
             className={`${
-              selectedAnswer === opt ? "selected-option" : ""
+              selectedAnswer === opt ? 'selected-option' : ''
             } options`}
             onClick={() => setSelectedAnswer(opt)}
           >
@@ -66,6 +72,6 @@ const Questions = () => {
       </button>
     </div>
   );
-};
+}
 
 export default Questions;

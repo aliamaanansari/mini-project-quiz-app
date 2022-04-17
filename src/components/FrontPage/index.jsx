@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./styles.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './styles.css';
 
-const FrontPage = () => {
+function FrontPage() {
   return (
     <div className="wrapper">
       <div className="heading">
@@ -14,6 +14,6 @@ const FrontPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default FrontPage;
